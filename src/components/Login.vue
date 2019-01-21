@@ -61,12 +61,15 @@ $main_color: #4c84ff;
       height: 48px;
       margin-bottom: 16px;
       padding-left: 11px;
+      box-sizing: border-box;
     }
     .login_checkbox {
       float: left;
+      font-size: 13px;
     }
     .login_find {
       float: right;
+      font-size: 13px;
     }
     #login_btn {
       margin-top:50px;
