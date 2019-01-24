@@ -3,17 +3,13 @@
     <section>
       <article id="login_container">
         <div class="form_area">
-          <form id="login_form">
+          <form id="login_form" v-on:submit.prevent="loginSubmit">
             <div class="login_label">로그인</div>
             <div>
-              <input class="login_input" type="text" placeholder="ID" id="user_id">
-              <input class="login_input" type="password" placeholder="Password" id="user_pwd">
+              <input class="login_input" type="text" placeholder="ID" id="user_id" v-model="user_id">
+              <input class="login_input" type="password" placeholder="Password" id="user_pwd" v-model="user_pwd">
             </div>
-            <div class="login_checkbox">
-              <input type="checkbox"> 로그인 상태 유지
-            </div>
-            <div class="login_find">아이디 찾기 | 비밀번호 찾기</div>
-
+            <button id="regist_btn" on:click="registBtn">회원가입</button>
             <div>
               <button id="login_btn" type="submit">로그인</button>
             </div>
@@ -26,7 +22,23 @@
 
 
 <script>
-export default {};
+export default {
+  data(){
+    return {
+      user_id: '',
+      user_pwd: '',
+    }
+  },
+  methods:{
+    loginSubmit: function(){
+      console.log('로그인');
+    },
+    registBtn: function(){
+      console.log('회원가입');
+    }
+  }
+
+};
 </script>
 
 
@@ -80,6 +92,15 @@ $main_color: #4c84ff;
       box-shadow: 0 4px 8px 0 #b4d7ff;
       background-color: #218aff;
       font-size: 13px;
+    }
+    #regist_btn{
+      float: right;
+      color: #fff;
+      width: 80px;
+      height: 24px;
+      box-shadow: 0 4px 8px 0 #b4d7ff;
+      background-color: #218aff;
+      font-size: 11px;
     }
   }
 }
