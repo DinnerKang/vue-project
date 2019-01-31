@@ -32,6 +32,7 @@ export default {
   methods:{
     loginSubmit: function(){
       console.log('로그인');
+      this.$router.push("/");
     },
     registBtn: function(){
       console.log('회원가입');
