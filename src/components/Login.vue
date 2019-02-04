@@ -74,14 +74,22 @@ export default {
       isRegister: false,
       register_id: "",
       register_pwd: "",
-      register_role: "Admin"
+      register_role: "Admin",
     };
+  },
+  created(){
+    this.$store.commit('logout');
   },
   methods: {
     loginSubmit: function() {
       console.log("로그인");
-      this.$Axios.post(`$`)
-      this.$router.push("/");
+      this.$Axios.post(`${this.$store.state.host}/auth/login`, { id: this.user_id, pwd: this.user_pwd}).then(
+        res=> {
+          console.log(res);
+          this.$store.commit('loginToken', res.data.token);
+          this.$router.push("/");
+        }
+      )
     },
     showLogin: function() {
       this.isLogin = true;
