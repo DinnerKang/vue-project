@@ -14,8 +14,8 @@
 export default {
     data(){
         return{
-            user_id = '',
-            user_role='',
+            user_id : '',
+            user_role :'',
 
         }
     },
