@@ -80,26 +80,27 @@ export default {
   methods: {
     loginSubmit: function() {
       console.log("로그인");
+      this.$Axios.post(`$`)
       this.$router.push("/");
     },
-    login: function() {
+    showLogin: function() {
       this.isLogin = true;
       this.isRegister = false;
     },
-    register: function() {
+    showRegister: function() {
       this.isLogin = false;
       this.isRegister = true;
     },
     registerSubmit: function() {
       console.log("회원가입 완료");
-      this.login();
+      this.showLogin();
     },
     registBtn: function() {
       console.log("회원가입");
-      this.register();
+      this.showRegister();
     },
     cancelBtn: function() {
-      this.login();
+      this.showLogin();
     }
   }
 };
@@ -135,6 +136,20 @@ $main_color: #4c84ff;
       float: right;
       font-size: 13px;
     }
+  }
+}
+#register_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  .register_box {
+    width: 320px;
+    height: 440px;
+    background: #fff;
   }
 }
 .btn {
@@ -176,20 +191,5 @@ $main_color: #4c84ff;
   margin-bottom: 16px;
   padding-left: 11px;
   box-sizing: border-box;
-}
-
-#register_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  .register_box {
-    width: 320px;
-    height: 440px;
-    background: #fff;
-  }
 }
 </style>
