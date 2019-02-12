@@ -5,7 +5,7 @@
       여기는 홈 입니다.
       당신의 권환은 {{$store.state.role}} 입니다.
     </div>
-    <button v-on:click="goAdmin">ADMIN</button>
+    <button class="btn" v-on:click="goAdmin">Admin</button>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   methods: {
     goAdmin: function() {
       console.log("어드민으로 가기");
-      if (this.user_role == "admin") {
+      if (this.$store.state.role == "admin") {
         this.$router.push("/Admin");
       }
     }
@@ -31,4 +31,16 @@ export default {
 
 
 <style scoped>
+.btn {
+  margin-top: 50px;
+  color: #fff;
+  width: 320px;
+  height: 48px;
+  border-radius: 23px;
+  box-shadow: 0 4px 8px 0 #b4d7ff;
+  background-color: #218aff;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+}
 </style>
